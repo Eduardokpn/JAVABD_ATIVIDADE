@@ -6,8 +6,7 @@ import br.com.construtora.DAO.CasaDAO;
 import br.com.construtora.conexao.conexaoAtiva;
 import br.com.contrutora.beans.Casa;
 
-
-public class TesteInserirCasaDAO {
+public class TesteDeleComWhereCaasa {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,16 +16,9 @@ public class TesteInserirCasaDAO {
 		Casa casa = new Casa();
 		CasaDAO casaDAO = new CasaDAO(con);
 		
-		casa.setEnderecoCompleto("edson");
-		casa.setMetrosQuadrados(25);
-		casa.setQuantidadedeQuintal(4);
-		casa.setQuantidadeQuartos(2);
-		casa.setQuantidadesBanheiros(6);
-
-				
-		System.out.println(casaDAO.inserirCasa(casa));
+		casa.setQuantidadeQuartos(4);
 		
-		conexaoAtiva.fecharConexao(con);
+		System.out.println(casaDAO.deltarcomWhere(casa));
 		
 		
 

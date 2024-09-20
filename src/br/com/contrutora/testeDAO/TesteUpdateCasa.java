@@ -6,30 +6,29 @@ import br.com.construtora.DAO.CasaDAO;
 import br.com.construtora.conexao.conexaoAtiva;
 import br.com.contrutora.beans.Casa;
 
-
-public class TesteInserirCasaDAO {
+public class TesteUpdateCasa {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
 		
 		Connection con = conexaoAtiva.abrirConexao();
 		
 		Casa casa = new Casa();
-		CasaDAO casaDAO = new CasaDAO(con);
+		CasaDAO casadao = new CasaDAO(con);
 		
-		casa.setEnderecoCompleto("edson");
+		casa.setQuantidadesBanheiros(3);
 		casa.setMetrosQuadrados(25);
-		casa.setQuantidadedeQuintal(4);
-		casa.setQuantidadeQuartos(2);
-		casa.setQuantidadesBanheiros(6);
-
-				
-		System.out.println(casaDAO.inserirCasa(casa));
+		
+		
+		
+		System.out.println(casadao.upadteCasaComWhere(casa));
 		
 		conexaoAtiva.fecharConexao(con);
 		
 		
-
+		
+		
 	}
 
 }
